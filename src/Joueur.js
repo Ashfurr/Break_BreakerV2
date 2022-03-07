@@ -29,7 +29,10 @@ class Joueur {
         this.$el = document.getElementById(scoreId);
         this.$score = this.$el.querySelector(".score")
         this.$vie = this.$el.querySelector(".vie")
-
+        /***
+         * @private
+         * @type {Phaser.Physics.Arcade.Sprite & {body: Phaser.Physics.Arcade.Body}}
+         */
         this.player=this.scene.physics.add.sprite(gameConfig.width/2-100,700,'pad').setOrigin(0,0).setTintFill(0xFFFFFF)
         this.player.setDisplaySize(200,20)
         this.player.setImmovable(true)
@@ -38,6 +41,13 @@ class Joueur {
             me.renvoie(me.player)
         })
     }
+    get y(){
+        return this.player.y;
+    }
+    get x(){
+        return this.player.x;
+    }
+
     renvoie(player){
         this.rando=this.scene.ballT.ballC.x-player.x
         this.coeff=this.rando/10

@@ -9,7 +9,7 @@ class Ball {
 
     Reset() {
         this.ballC.x = gameConfig.width / 2;
-        this.ballC.y = this.scene.player.player.y-20;
+        this.ballC.y = this.scene.player.y-20;
         this.ballC.setVelocityX(0);
         this.state=0
         this.ballC.setVelocityY(0);
